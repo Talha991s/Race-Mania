@@ -17,6 +17,7 @@ namespace UnityStandardAssets.Vehicles.Car
         KPH
     }
 
+    [Serializable]
     public class CarController : MonoBehaviour
     {
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
