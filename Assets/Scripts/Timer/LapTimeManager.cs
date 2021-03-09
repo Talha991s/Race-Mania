@@ -8,6 +8,7 @@ public class LapTimeManager : MonoBehaviour
 {
     public static int MinuteCount;
     public static int SecondCount;
+    public static int milli;
     public static float MilliCount;
     public static string MilliDisplay;
 
@@ -19,20 +20,22 @@ public class LapTimeManager : MonoBehaviour
     {
         MilliCount += Time.deltaTime * 10;
         MilliDisplay = MilliCount.ToString("F0");
-        MilliBox.GetComponent<TMP_Text>().text = "" + MilliDisplay ;
+        MilliBox.GetComponent<TMP_Text>().text = "" + MilliDisplay; 
+        milli = (int)MilliCount;
 
         if(MilliCount >= 10)
         {
             MilliCount = 0;
             SecondCount += 1;
         }
+
         if(SecondCount <= 9 )
         {
-            SecondBox.GetComponent<TMP_Text>().text = "0" + SecondCount + ".";
+            SecondBox.GetComponent<TMP_Text>().text = "0" + SecondCount + ":";
         }
         else
         {
-            SecondBox.GetComponent<TMP_Text>().text = "" + SecondCount + ".";
+            SecondBox.GetComponent<TMP_Text>().text = "" + SecondCount + ":";
         }
         if(SecondCount >= 60)
         {

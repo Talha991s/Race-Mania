@@ -13,29 +13,31 @@ public class LapComplete : MonoBehaviour
     public GameObject SecondDisplay;
     public GameObject MilliDisplay;
 
-    public GameObject LapTimeBox;
+   // public GameObject LapTimeBox;
 
-    private void OnTriggerEnter()
+    void OnTriggerEnter()
     {
-        if(LapTimeManager.SecondCount <= 9 )
+        if (LapTimeManager.SecondCount <= 9)
         {
-            SecondDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.SecondCount + ".";
+            SecondDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.SecondCount + ":";
         }
         else
         {
-            SecondDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.SecondCount + ".";
+            SecondDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.SecondCount + ":";
         }
+
 
         if (LapTimeManager.MinuteCount <= 9)
         {
-            MinuteDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.MinuteCount + ".";
+            MinuteDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.MinuteCount + ":";
         }
         else
         {
-            MinuteDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.MinuteCount + ".";
+            MinuteDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.MinuteCount + ":";
         }
 
-        MilliDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.MilliCount;
+
+        MilliDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.milli +"";
 
         LapTimeManager.MinuteCount = 0;
         LapTimeManager.SecondCount = 0;
