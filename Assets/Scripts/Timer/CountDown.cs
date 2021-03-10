@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
+    public AudioSource LevelMusic;
     public GameObject Countdown;
     public AudioSource GetReady;
     public AudioSource GoAudio;
@@ -49,6 +50,7 @@ public class CountDown : MonoBehaviour
 
         LapTimer.SetActive(true);
         StartBlock.SetActive(false);
+        LevelMusic.Play();
         //BackBlock.SetActive(false);
         //CarControls.SetActive(true);
     }

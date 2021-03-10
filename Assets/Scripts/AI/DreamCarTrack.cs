@@ -29,7 +29,24 @@ public class DreamCarTrack : MonoBehaviour
     public GameObject Mark17;
     public GameObject Mark18;
     public GameObject Mark19;
+
     public GameObject Mark20;
+    public GameObject Mark21;
+    public GameObject Mark22;
+    public GameObject Mark23;
+
+    public GameObject Mark24;
+    public GameObject Mark25;
+    public GameObject Mark26;
+
+    public GameObject Mark27;
+    public GameObject Mark28;
+    public GameObject Mark29;
+
+    public GameObject Mark30;
+    public GameObject Mark31;
+    public GameObject Mark32;
+    
 
     public int MarkTracker;
 
@@ -126,6 +143,54 @@ public class DreamCarTrack : MonoBehaviour
         {
             TheMarker.transform.position = Mark20.transform.position;
         }
+        if (MarkTracker == 20)
+        {
+            TheMarker.transform.position = Mark21.transform.position;
+        }
+        if (MarkTracker == 21)
+        {
+            TheMarker.transform.position = Mark22.transform.position;
+        }
+        if (MarkTracker == 22)
+        {
+            TheMarker.transform.position = Mark23.transform.position;
+        }
+        if (MarkTracker == 23)
+        {
+            TheMarker.transform.position = Mark24.transform.position;
+        }
+        if (MarkTracker == 24)
+        {
+            TheMarker.transform.position = Mark25.transform.position;
+        }
+        if (MarkTracker == 25)
+        {
+            TheMarker.transform.position = Mark26.transform.position;
+        }
+        if (MarkTracker == 26)
+        {
+            TheMarker.transform.position = Mark27.transform.position;
+        }
+        if (MarkTracker == 27)
+        {
+            TheMarker.transform.position = Mark28.transform.position;
+        }
+        if (MarkTracker == 28)
+        {
+            TheMarker.transform.position = Mark29.transform.position;
+        }
+        if (MarkTracker == 29)
+        {
+            TheMarker.transform.position = Mark30.transform.position;
+        }
+        if (MarkTracker == 30)
+        {
+            TheMarker.transform.position = Mark31.transform.position;
+        }
+        if (MarkTracker == 31)
+        {
+            TheMarker.transform.position = Mark32.transform.position;
+        }
 
     }
 
@@ -135,7 +200,7 @@ public class DreamCarTrack : MonoBehaviour
         {
             this.GetComponent<BoxCollider>().enabled = false;
             MarkTracker += 1;
-            if(MarkTracker == 20)
+            if(MarkTracker == 32)
             {
                 MarkTracker = 0;
             }

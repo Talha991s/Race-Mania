@@ -16,9 +16,14 @@ public class LapTimeManager : MonoBehaviour
     public GameObject SecondBox;
     public GameObject MilliBox;
 
+    public static float raw;
+    public static int RawTime;
+
     void Update()
     {
         MilliCount += Time.deltaTime * 10;
+        raw += Time.deltaTime;
+        RawTime = (int)raw;
         MilliDisplay = MilliCount.ToString("F0");
         MilliBox.GetComponent<TMP_Text>().text = "" + MilliDisplay; 
         milli = (int)MilliCount;
