@@ -29,48 +29,53 @@ public class LapComplete : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider collider)
     {
-        lapsDone += 1;
-        RawTime = PlayerPrefs.GetInt("raw");
+        //if (collider.gameObject.CompareTag("Player"))
+        //{
+            lapsDone += 1;
+        
+            RawTime = PlayerPrefs.GetInt("raw");
 
-        if (LapTimeManager.RawTime <= RawTime)
-        {
-            if (LapTimeManager.SecondCount <= 9)
+            if (LapTimeManager.RawTime <= RawTime)
             {
-                SecondDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.SecondCount + ":";
+                if (LapTimeManager.SecondCount <= 9)
+                {
+                    SecondDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.SecondCount + ":";
+                }
+                else
+                {
+                    SecondDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.SecondCount + ":";
+                }
+
+
+                if (LapTimeManager.MinuteCount <= 9)
+                {
+                    MinuteDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.MinuteCount + ":";
+                }
+                else
+                {
+                    MinuteDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.MinuteCount + ":";
+                }
+
+                MilliDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.milli + "";
             }
-            else
-            {
-                SecondDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.SecondCount + ":";
-            }
 
+            PlayerPrefs.SetInt("minSave", LapTimeManager.MinuteCount);
+            PlayerPrefs.SetInt("secSave", LapTimeManager.SecondCount);
+            PlayerPrefs.SetInt("milliSave", LapTimeManager.milli);
+            PlayerPrefs.SetInt("raw", LapTimeManager.RawTime);
 
-            if (LapTimeManager.MinuteCount <= 9)
-            {
-                MinuteDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.MinuteCount + ":";
-            }
-            else
-            {
-                MinuteDisplay.GetComponent<TMP_Text>().text = "" + LapTimeManager.MinuteCount + ":";
-            }
+            LapTimeManager.MinuteCount = 0;
+            LapTimeManager.SecondCount = 0;
+            LapTimeManager.MilliCount = 0;
+            LapTimeManager.RawTime = 0;
+            LapCounter.GetComponent<TMP_Text>().text = "" + lapsDone;
 
-            MilliDisplay.GetComponent<TMP_Text>().text = "0" + LapTimeManager.milli + "";
-        }
+            HalfLapTrig.SetActive(true);
+            LapCompleteTrig.SetActive(false);
+        
 
-        PlayerPrefs.SetInt("minSave", LapTimeManager.MinuteCount);
-        PlayerPrefs.SetInt("secSave", LapTimeManager.SecondCount);
-        PlayerPrefs.SetInt("milliSave", LapTimeManager.milli);
-        PlayerPrefs.SetInt("raw", LapTimeManager.RawTime);
-
-        LapTimeManager.MinuteCount = 0;
-        LapTimeManager.SecondCount = 0;
-        LapTimeManager.MilliCount = 0;
-        LapTimeManager.RawTime = 0;
-        LapCounter.GetComponent<TMP_Text>().text = "" + lapsDone;
-
-        HalfLapTrig.SetActive(true);
-        LapCompleteTrig.SetActive(false);
     }
 
 

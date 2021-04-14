@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - DreamCar01
+  - AI
+  - RaceFinish
   layers:
   - Default
   - TransparentFX

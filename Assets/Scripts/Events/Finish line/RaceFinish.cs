@@ -12,19 +12,27 @@ public class RaceFinish : MonoBehaviour
     public GameObject CompleteTrig;
     public AudioSource FinishMusic;
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        this.GetComponent<BoxCollider>().enabled = false;
-        MyCar.SetActive(false);
-        CompleteTrig.SetActive(false);
-        CarController.m_Topspeed = 0.0f;
-        MyCar.GetComponent<CarController>().enabled = false;
-        MyCar.GetComponent<CarUserControl>().enabled = false;
-        MyCar.SetActive(true);
-        FinishCam.SetActive(true);
-        LevelMusic.SetActive(false);
-        ViewMode.SetActive(false);
-        FinishMusic.Play();
+   
+        
+            this.GetComponent<BoxCollider>().enabled = false;
+            MyCar.SetActive(false);
+            CompleteTrig.SetActive(false);
+            CarController.m_Topspeed = 0.0f;
+            MyCar.GetComponent<CarController>().enabled = false;
+            MyCar.GetComponent<CarUserControl>().enabled = false;
+            MyCar.SetActive(true);
+            FinishCam.SetActive(true);
+            LevelMusic.SetActive(false);
+            ViewMode.SetActive(false);
+            FinishMusic.Play();
+        
+        if(other.gameObject.CompareTag("AI"))
+        {
+            Debug.Log("AI WON");
+        }
+
 
     }
 }
