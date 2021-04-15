@@ -425,8 +425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -264, y: -0.0000014305}
-  m_SizeDelta: {x: 150, y: 110.7177}
+  m_AnchoredPosition: {x: -247.5875, y: -0.0000014305}
+  m_SizeDelta: {x: 182.8251, y: 110.7177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555399420
 MonoBehaviour:
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ccd8b5cae1a658340a3513fcafaee454, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 553df5acf4badf648a206ae33b19b6c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1046,6 +1046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8031ab818fddce94f831400e07af4b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyCar: {fileID: 8165422438897303670, guid: 204613cd01c17e348b1788c2928541a1, type: 3}
+  Laptimemanger: {fileID: 4467087343635466268, guid: 8ead0850be010bb49ad05bb289289339, type: 3}
 --- !u!1 &1493138004
 GameObject:
   m_ObjectHideFlags: 0

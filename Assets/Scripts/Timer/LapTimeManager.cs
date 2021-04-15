@@ -19,6 +19,14 @@ public class LapTimeManager : MonoBehaviour
     public static float raw;
     public static int RawTime;
 
+    private void Start()
+    {
+        MinuteCount = 0;
+        SecondCount = 0;
+        MilliCount = 0;
+        RawTime = 0;
+    }
+
     void Update()
     {
         MilliCount += Time.deltaTime * 10;

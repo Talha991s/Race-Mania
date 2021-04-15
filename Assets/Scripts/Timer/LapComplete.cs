@@ -31,10 +31,10 @@ public class LapComplete : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        //if (collider.gameObject.CompareTag("Player"))
-        //{
+        if (collider.gameObject.CompareTag("Player"))
+        {
             lapsDone += 1;
-        
+
             RawTime = PlayerPrefs.GetInt("raw");
 
             if (LapTimeManager.RawTime <= RawTime)
@@ -74,7 +74,7 @@ public class LapComplete : MonoBehaviour
 
             HalfLapTrig.SetActive(true);
             LapCompleteTrig.SetActive(false);
-        
+        }
 
     }
 

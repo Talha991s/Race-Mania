@@ -13,7 +13,7 @@ public class CountDown : MonoBehaviour
     public AudioSource GoAudio;
     public GameObject LapTimer;
     public GameObject StartBlock;
-   // public GameObject BackBlock;
+    public GameObject BackBlock;
     
 
     // Start is called before the first frame update
@@ -51,7 +51,7 @@ public class CountDown : MonoBehaviour
         LapTimer.SetActive(true);
         StartBlock.SetActive(false);
         LevelMusic.Play();
-        //BackBlock.SetActive(false);
+        BackBlock.SetActive(false);
         //CarControls.SetActive(true);
     }
 }
